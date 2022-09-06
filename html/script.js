@@ -31,7 +31,7 @@ function openCategory() {
   var base = '<div class="" id="page"><!-- group -->' +
     '   <div class="clearfix grpelem scale-up-center" id="pu104-4"><!-- column -->' +
     '    <div class="clearfix colelem" id="u104-4" data-sizePolicy="fixed" data-pintopage="page_fixedCenter" data-leftAdjustmentDoneBy="pu104-4"><!-- content -->' +
-    '     <p>WORKBENCH</p>' +
+    '     <p>Bancone</p>' +
     '    </div>' +
     '    <div class="clearfix colelem" id="u139-4" data-sizePolicy="fixed" data-pintopage="page_fixedCenter" data-leftAdjustmentDoneBy="pu104-4"><!-- content -->' +
 
@@ -142,7 +142,7 @@ function openCrafting(t) {
   var base = '<div class="" id="page"><!-- group -->' +
     '   <div class="clearfix grpelem scale-up-center" id="pu104-4"><!-- column -->' +
     '    <div class="clearfix colelem" id="u104-4" data-sizePolicy="fixed" data-pintopage="page_fixedCenter" data-leftAdjustmentDoneBy="pu104-4"><!-- content -->' +
-    '     <p>WORKBENCH</p>' +
+    '     <p>Bancone</p>' +
     '    </div>' +
     '    <div class="clearfix colelem" id="u139-4" data-sizePolicy="fixed" data-pintopage="page_fixedCenter" data-leftAdjustmentDoneBy="pu104-4"><!-- content -->' +
 
