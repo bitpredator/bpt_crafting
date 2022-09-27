@@ -24,6 +24,11 @@ Categories = {
 	Label = 'Import',
 	Image = 'Import',
 	Jobs = {'import'}
+},
+['mechanic'] = {
+	Label = 'Mechanic',
+	Image = 'Mechanic',
+	Jobs = {'mechanic'}
 }
 
 
@@ -97,12 +102,28 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	}
 }, 
 
+['ironsheet'] = {
+	Level = 0, -- From what level this item will be craftable
+	Category = 'import', -- The category item will be put in
+	isGun = false, -- Specify if this is a gun so it will be added to the loadout
+	Jobs = {'import'}, -- What jobs can craft this item, leaving {} allows any job
+	JobGrades = {}, -- What job grades can craft this item, leaving {} allows any grade
+	Amount = 1, -- The amount that will be crafted
+	SuccessRate = 100, -- 100% you will recieve the item
+	requireBlueprint = false, -- Requires a blueprint whitch you need to add in the database yourself TEMPLATE: itemname_blueprint EXAMPLE: bandage_blueprint
+	Time = 120, -- Time in seconds it takes to craft this item
+	Ingredients = { -- Ingredients needed to craft this item
+		['garbage'] = 10 -- item name and count, adding items that dont exist in database will crash the script
+	}
+}, 
+
 },
 
 Workbenches = { -- Every workbench location, leave {} for jobs if you want everybody to access
 
-		{coords = vector3(1020.936279, -2404.628662, 30.122314), jobs = {'import'}, blip = false, recipes = {'cottonforbandages'}, radius = 3.0 },
-		{coords = vector3(330.909882, -581.116455, 28.791260), jobs = {'ambulance'}, blip = false, recipes = {'bandage'}, radius = 3.0 }
+		{coords = vector3(1020.936279, -2404.628662, 30.122314), jobs = {'import'}, blip = false, recipes = {'cottonforbandages','ironsheet'}, radius = 3.0 },
+		{coords = vector3(330.909882, -581.116455, 28.791260), jobs = {'ambulance'}, blip = false, recipes = {'bandage'}, radius = 3.0 },
+		{coords = vector3(-323.551636, -129.626373, 39.002197), jobs = {'mechanic'}, blip = false, recipes = {'fixkit'}, radius = 3.0 }
 
 },
  
