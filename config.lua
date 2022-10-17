@@ -175,6 +175,23 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	}
 }, 
 
+['almondmilk'] = {
+	Level = 0,
+	Category = 'unicorn', 
+	isGun = false, 
+	Jobs = {'unicorn'}, 
+	JobGrades = {}, 
+	Amount = 1, 
+	SuccessRate = 100, 
+	requireBlueprint = false, 
+	Time = 60, 
+	Ingredients = { 
+		['ice'] = 2, 
+		['almonds'] = 5,
+		['water'] = 1
+	}
+},
+
 },
 
 Workbenches = { -- Every workbench location, leave {} for jobs if you want everybody to access
@@ -183,7 +200,7 @@ Workbenches = { -- Every workbench location, leave {} for jobs if you want every
 	{coords = vector3(330.909882, -581.116455, 28.791260), jobs = {'ambulance'}, blip = false, recipes = {'bandage'}, radius = 1.0 },
 	{coords = vector3(-323.551636, -129.626373, 39.002197), jobs = {'mechanic'}, blip = false, recipes = {'fixkit'}, radius = 1.0 },
 	{coords = vector3(809.090088, -2172.923096, 29.616821), jobs = {'ammu'}, blip = false, recipes = {'WEAPON_APPISTOL'}, radius = 1.0 },
-	{coords = vector3(129.217590, -1283.802246, 29.263062), jobs = {'unicorn'}, blip = false, recipes = {''}, radius = 1.0 }
+	{coords = vector3(129.217590, -1283.802246, 29.263062), jobs = {'unicorn'}, blip = false, recipes = {'almondmilk'}, radius = 1.0 }
 
 },
  
@@ -191,7 +208,7 @@ Workbenches = { -- Every workbench location, leave {} for jobs if you want every
 Text = {
 
     ['not_enough_ingredients'] = 'Non hai abbastanza ingredienti',
-    ['you_cant_hold_item'] = 'Non puoi tenere l\'oggetto',
+    ['you_cant_hold_item'] = 'Non puoi creare il prodotto',
     ['item_crafted'] = 'Articolo realizzato!',
     ['wrong_job'] = 'Non puoi aprire questo banco di lavoro',
     ['workbench_hologram'] = '[~b~E~w~] banco da lavoro',
