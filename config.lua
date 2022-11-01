@@ -192,6 +192,24 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	}
 },
 
+['slicedchips'] = {
+	Level = 0,
+	Category = 'unicorn', 
+	isGun = false, 
+	Jobs = {'unicorn'}, 
+	JobGrades = {}, 
+	Amount = 5, 
+	SuccessRate = 100, 
+	requireBlueprint = false, 
+	Time = 10, 
+	Ingredients = { 
+		['potato'] = 1,
+		['water'] = 1
+	}
+},
+
+
+
 },
 
 Workbenches = { -- Every workbench location, leave {} for jobs if you want everybody to access
@@ -200,7 +218,7 @@ Workbenches = { -- Every workbench location, leave {} for jobs if you want every
 	{coords = vector3(330.909882, -581.116455, 28.791260), jobs = {'ambulance'}, blip = false, recipes = {'bandage'}, radius = 1.0 },
 	{coords = vector3(-323.551636, -129.626373, 39.002197), jobs = {'mechanic'}, blip = false, recipes = {'fixkit'}, radius = 1.0 },
 	{coords = vector3(809.090088, -2172.923096, 29.616821), jobs = {'ammu'}, blip = false, recipes = {'WEAPON_APPISTOL'}, radius = 1.0 },
-	{coords = vector3(129.217590, -1283.802246, 29.263062), jobs = {'unicorn'}, blip = false, recipes = {'almondmilk'}, radius = 1.0 }
+	{coords = vector3(129.217590, -1283.802246, 29.263062), jobs = {'unicorn'}, blip = false, recipes = {'almondmilk','slicedchips'}, radius = 1.0 }
 
 },
  
