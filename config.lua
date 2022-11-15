@@ -39,6 +39,11 @@ Categories = {
 	Label = 'Unicorn',
 	Image = 'unicorn',
 	Jobs = {'unicorn'}
+},
+['dustman'] = {
+	Label = 'Dustman',
+	Image = 'dustman',
+	Jobs = {'dustman'}
 }
 
 
@@ -112,36 +117,21 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	}
 }, 
 
-['iron'] = {
-	Level = 0, 
-	Category = 'import', 
-	isGun = false, 
-	Jobs = {'import'}, 
-	JobGrades = {}, 
-	Amount = 1, 
-	SuccessRate = 100, 
-	requireBlueprint = false, 
-	Time = 120, 
-	Ingredients = { 
-		['garbage'] = 100 
-	}
-}, 
-
 ['ironsheet'] = {
 	Level = 0, 
-	Category = 'import', 
+	Category = 'dustman', 
 	isGun = false, 
-	Jobs = {'import'}, 
+	Jobs = {'dustman'}, 
 	JobGrades = {}, 
-	Amount = 10, 
+	Amount = 2, 
 	SuccessRate = 100, 
 	requireBlueprint = false, 
 	Time = 60, 
 	Ingredients = { 
-		['iron'] = 1,
+		['trash_can'] = 5, 
 		['hammer'] = 1
 	}
-}, 
+},
 
 ['hammer'] = {
 	Level = 0,
@@ -208,18 +198,34 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	}
 },
 
+['iron'] = {
+	Level = 0,
+	Category = 'import', 
+	isGun = false, 
+	Jobs = {'import'}, 
+	JobGrades = {}, 
+	Amount = 3, 
+	SuccessRate = 100, 
+	requireBlueprint = false, 
+	Time = 10, 
+	Ingredients = { 
+		['hammer'] = 1,
+		['ironsheet'] = 10
+	}
+},
+
 
 
 },
 
 Workbenches = { -- Every workbench location, leave {} for jobs if you want everybody to access
 
-	{coords = vector3(1020.936279, -2404.628662, 30.122314), jobs = {'import'}, blip = false, recipes = {'cottonforbandages','ironsheet','iron','hammer'}, radius = 1.0 },
+	{coords = vector3(1020.936279, -2404.628662, 30.122314), jobs = {'import'}, blip = false, recipes = {'cottonforbandages','iron','hammer'}, radius = 1.0 },
 	{coords = vector3(330.909882, -581.116455, 28.791260), jobs = {'ambulance'}, blip = false, recipes = {'bandage'}, radius = 1.0 },
 	{coords = vector3(-323.551636, -129.626373, 39.002197), jobs = {'mechanic'}, blip = false, recipes = {'fixkit'}, radius = 1.0 },
 	{coords = vector3(809.090088, -2172.923096, 29.616821), jobs = {'ammu'}, blip = false, recipes = {'WEAPON_APPISTOL'}, radius = 1.0 },
-	{coords = vector3(129.217590, -1283.802246, 29.263062), jobs = {'unicorn'}, blip = false, recipes = {'almondmilk','slicedchips'}, radius = 1.0 }
-
+	{coords = vector3(129.217590, -1283.802246, 29.263062), jobs = {'unicorn'}, blip = false, recipes = {'almondmilk','slicedchips'}, radius = 1.0 },
+    {coords = vector3(-416.993408, -1683.468140, 19.018311), jobs = {'dustman'}, blip = false, recipes = {'ironsheet'}, radius = 1.0 },
 },
  
 
