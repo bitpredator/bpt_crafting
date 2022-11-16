@@ -9,3 +9,23 @@ CREATE TABLE `bpt_items` (
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ;
+
+INSERT INTO `bpt_items` (`name`, `label`) VALUES
+	('bandage', 'benda'),
+	('cottonforbandages', 'cotone per bende'),
+	('cotton', 'cotone'),
+	('ironsheet', 'lamiera di ferro'),
+	('garbage', 'rifiuti'),
+	('WEAPON_APPISTOL', 'pistola AP'),
+	('iron', 'Ferro'),
+	('hammer', 'martello'),
+	('legnatagliata', 'asse di legno'),
+	('fixkit', 'kit di riparazione'),
+	('almondmilk', 'latte di mandorla'),
+	('ice', 'ghiaccio'),
+	('water', 'acqua'),
+	('almonds', 'mandorle'),
+	('chips', 'patatine fritte'),
+	('slicedchips', 'patate affettate'),
+	('potato', 'patate'),
+	('trash_can', 'lattina usata');
