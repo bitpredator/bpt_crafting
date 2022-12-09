@@ -28,4 +28,13 @@ INSERT INTO `bpt_items` (`name`, `label`) VALUES
 	('chips', 'patatine fritte'),
 	('slicedchips', 'patate affettate'),
 	('potato', 'patate'),
-	('trash_can', 'lattina usata');
+	('trash_can', 'lattina usata'),
+	('recycled_paper', 'carta riciclata'),
+	('paper', 'carta'),
+	('newspaper', 'giornale rovinato'),
+	('trash_burgershot', 'scatola di burgershot usata'),
+	('cigarette_paper', 'cartina'),
+	('cigarrette_opium', 'sigaretta con oppio'),
+	('opium', 'oppio'),
+	('copper', 'Rame')
+;

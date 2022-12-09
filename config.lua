@@ -16,7 +16,7 @@ Categories = {
 	Jobs = {'ammu'}
 },
 ['medical'] = {
-	Label = 'MEDICAL',
+	Label = 'Ospedale',
 	Image = 'bandage',
 	Jobs = {'ambulance'}
 },
@@ -44,6 +44,11 @@ Categories = {
 	Label = 'Dustman',
 	Image = 'dustman',
 	Jobs = {'dustman'}
+},
+['ballas'] = {
+	Label = 'Ballas',
+	Image = 'ballas',
+	Jobs = {'ballas'}
 }
 
 
@@ -67,23 +72,6 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	Time = 10, -- Time in seconds it takes to craft this item
 	Ingredients = { -- Ingredients needed to craft this item
 		['cottonforbandages'] = 2 -- item name and count, adding items that dont exist in database will crash the script
-	}
-}, 
-
-['WEAPON_APPISTOL'] = {
-	Level = 10, -- From what level this item will be craftable
-	Category = 'weapons', -- The category item will be put in
-	isGun = true, -- Specify if this is a gun so it will be added to the loadout
-	Jobs = {ammu}, -- What jobs can craft this item, leaving {} allows any job
-	JobGrades = {}, -- What job grades can craft this item, leaving {} allows any grade
-	Amount = 1, -- The amount that will be crafted
-	SuccessRate = 100, --  100% you will recieve the item
-	requireBlueprint = false, -- Requires a blueprint whitch you need to add in the database yourself TEMPLATE: itemname_blueprint EXAMPLE: bandage_blueprint
-	Time = 600, -- Time in seconds it takes to craft this item
-	Ingredients = { -- Ingredients needed to craft this item
-		['copper'] = 5, -- item name and count, adding items that dont exist in database will crash the script
-		['wood'] = 3,
-		['iron'] = 5
 	}
 }, 
 
@@ -130,6 +118,37 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	Ingredients = { 
 		['trash_can'] = 5, 
 		['hammer'] = 1
+	}
+},
+
+['recycled_paper'] = {
+	Level = 0, 
+	Category = 'dustman', 
+	isGun = false, 
+	Jobs = {'dustman'}, 
+	JobGrades = {}, 
+	Amount = 1, 
+	SuccessRate = 100, 
+	requireBlueprint = false, 
+	Time = 30, 
+	Ingredients = { 
+		['paper'] = 2
+	}
+},
+
+['paper'] = {
+	Level = 0, 
+	Category = 'dustman', 
+	isGun = false, 
+	Jobs = {'dustman'}, 
+	JobGrades = {}, 
+	Amount = 6, 
+	SuccessRate = 100, 
+	requireBlueprint = false, 
+	Time = 30, 
+	Ingredients = { 
+		['newspaper'] = 1,
+		['trash_burgershot'] = 1
 	}
 },
 
@@ -214,6 +233,54 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	}
 },
 
+['cigarette_paper'] = {
+	Level = 0,
+	Category = 'ballas', 
+	isGun = false, 
+	Jobs = {'ballas'}, 
+	JobGrades = {}, 
+	Amount = 1, 
+	SuccessRate = 100, 
+	requireBlueprint = false, 
+	Time = 10, 
+	Ingredients = { 
+		['recycled_paper'] = 1
+	}
+},
+
+['cigarrette_opium'] = {
+	Level = 0,
+	Category = 'ballas', 
+	isGun = false, 
+	Jobs = {'ballas'}, 
+	JobGrades = {}, 
+	Amount = 1, 
+	SuccessRate = 100, 
+	requireBlueprint = false, 
+	Time = 25, 
+	Ingredients = { 
+		['cigarette_paper'] = 1,
+		['opium'] = 1
+	}
+},
+
+['WEAPON_APPISTOL'] = {
+	Level = 10,
+	Category = 'ammu', 
+	isGun = false, 
+	Jobs = {'ammu'}, 
+	JobGrades = {}, 
+	Amount = 1, 
+	SuccessRate = 100, 
+	requireBlueprint = false, 
+	Time = 1, 
+	Ingredients = { 
+		['copper'] = 1,
+		['iron'] = 1,
+		['legnatagliata'] = 1
+	}
+},
+
 
 
 },
@@ -225,7 +292,8 @@ Workbenches = { -- Every workbench location, leave {} for jobs if you want every
 	{coords = vector3(-323.551636, -129.626373, 39.002197), jobs = {'mechanic'}, blip = false, recipes = {'fixkit'}, radius = 1.0 },
 	{coords = vector3(809.090088, -2172.923096, 29.616821), jobs = {'ammu'}, blip = false, recipes = {'WEAPON_APPISTOL'}, radius = 1.0 },
 	{coords = vector3(129.217590, -1283.802246, 29.263062), jobs = {'unicorn'}, blip = false, recipes = {'almondmilk','slicedchips'}, radius = 1.0 },
-    {coords = vector3(-416.993408, -1683.468140, 19.018311), jobs = {'dustman'}, blip = false, recipes = {'ironsheet'}, radius = 1.0 },
+    {coords = vector3(-416.993408, -1683.468140, 19.018311), jobs = {'dustman'}, blip = false, recipes = {'ironsheet','recycled_paper','paper'}, radius = 1.0 },
+	{coords = vector3(83.156044, -1960.259277, 18.041016), jobs = {'ballas'}, blip = false, recipes = {'cigarette_paper', 'cigarrette_opium'}, radius = 1.0 },
 },
  
 
