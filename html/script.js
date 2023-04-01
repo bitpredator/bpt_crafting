@@ -12,22 +12,15 @@ var categories;
 
 function closeMenu() {
   $.post('https://bpt_crafting/close', JSON.stringify({}));
-
-
-  $("#main_container").fadeOut(400);
+  $("#main").fadeOut(400);
   timeout = setTimeout(function () {
-    $("#main_container").html("");
-    $("#main_container").fadeIn();
+    $("#main").html("");
+    $("#main").fadeIn();
   }, 400);
-
-
 }
 
 function openCategory() {
-
   var first = '';
-
-
   var base = '<div class="" id="page"><!-- group -->' +
     '   <div class="clearfix grpelem scale-up-center" id="pu104-4"><!-- column -->' +
     '    <div class="clearfix colelem" id="u104-4" data-sizePolicy="fixed" data-pintopage="page_fixedCenter" data-leftAdjustmentDoneBy="pu104-4"><!-- content -->' +
@@ -108,17 +101,11 @@ function openCategory() {
 
   }
 
-  base = base + first + '</div>' +
-
-
-    '   </div>' +
-
+  base = base + first
     '   <div class="verticalspacer" data-offset-top="0" data-content-above-spacer="1060" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>' +
     '   <div class="grpelem" id="u559"><!-- simple frame --></div>' +
     '  </div>';
-
-
-  $("#main_container").append(base);
+  $("#main").append(base);
 
   $(".recipe").hover(function () {
     playClickSound();
@@ -133,7 +120,7 @@ function openCategory() {
 
 function openCrafting(t) {
 
-  $("#main_container").html('');
+  $("#main").html('');
 
   var first = '';
   var second = '';
@@ -277,17 +264,11 @@ function openCrafting(t) {
     }
   }
 
-  base = base + first + second + '</div>' +
-
-
-    '   </div>' +
-
+  base = base + first + second
     '   <div class="verticalspacer" data-offset-top="0" data-content-above-spacer="1060" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>' +
-    '   <div class="grpelem" id="u559"><!-- simple frame --></div>' +
-    '  </div>';
-
-
-  $("#main_container").append(base);
+    '   <div class="grpelem" id="u559"></div>' +
+    '   </div>';
+  $("#main").append(base);
 
   $(".recipe").hover(function () {
     playClickSound();
@@ -295,7 +276,6 @@ function openCrafting(t) {
 
   $("#u139-4").text(level + ' LEVEL');
   setProgress((rawlevel % 100));
-
 
 }
 
@@ -348,8 +328,6 @@ function craft(t) {
   $.post('https://bpt_crafting/craft', JSON.stringify({
     item: item
   }));
-
-
 }
 
 function setProgress(p) {
@@ -430,10 +408,7 @@ function inspect(t) {
     }
 
 
-    base = base + first + second + '</div>' +
-
-      '   </div>';
-
+    base = base + first + second 
     $("#page").append(base);
   }
 
@@ -449,10 +424,7 @@ function playClickSound() {
 
 
 window.addEventListener('message', function (event) {
-
-
   var edata = event.data;
-
   if (edata.type == "addqueue") {
     addToQueue(edata.item, edata.time, edata.id);
   }
@@ -461,8 +433,6 @@ window.addEventListener('message', function (event) {
       if (inventory[key] >= value) {
         inventory[key] = inventory[key] - value;
       }
-
-
       if (inventory[key] < value) {
         $(document).find("#" + key).css("opacity", "0.5");
       }
@@ -470,7 +440,6 @@ window.addEventListener('message', function (event) {
   }
 
   if (edata.type == "open") {
-
     level = (edata.level - (edata.level % 100)) / 100;
     rawlevel = edata.level;
     recipes = edata.recipes;
@@ -481,9 +450,5 @@ window.addEventListener('message', function (event) {
     grade = edata.grade;
     categories = edata.categories
     openCategory();
-
-
   }
-
-
 });

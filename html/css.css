@@ -895,13 +895,11 @@ html {
 	scroll-behavior: smooth;
 }
 
-
 /* width */
 
  ::-webkit-scrollbar {
 	width: 0px;
 }
-
 
 /* Track */
 
@@ -909,14 +907,12 @@ html {
 	opacity: 0.0;
 }
 
-
 /* Handle */
 
  ::-webkit-scrollbar-thumb {
 	background: #2469ff;
 	border-radius: 10px;
 }
-
 
 /* Handle on hover */
 

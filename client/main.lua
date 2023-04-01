@@ -1,29 +1,27 @@
 local Keys = {
-    ["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169,
-    ["F9"] = 56, ["F10"] = 57, ["~"] = 243, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177, ["TAB"] = 37, ["Q"] = 44,
-    ["W"] = 32, ["E"] = 38, ["R"] = 45, ["T"] = 245, ["Y"] = 246, ["U"] = 303, ["P"] = 199, ["["] = 39, ["]"] = 40,
-    ["ENTER"] = 18, ["CAPS"] = 137, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["F"] = 23, ["G"] = 47, ["H"] = 74, ["K"] = 311,
-    ["L"] = 182, ["LEFTSHIFT"] = 21, ["Z"] = 20, ["X"] = 73, ["C"] = 26, ["V"] = 0, ["B"] = 29, ["N"] = 249, 
-    ["M"] = 244, [","] = 82, ["."] = 81, ["LEFTCTRL"] = 36, ["LEFTALT"] = 19,["SPACE"] = 22, ["RIGHTCTRL"] = 70, 
-    ["HOME"] = 213, ["PAGEUP"] = 10, ["PAGEDOWN"] = 11, ["DELETE"] = 178, ["LEFT"] = 174, ["RIGHT"] = 175,
-    ["TOP"] = 27, ["DOWN"] = 173, ["NENTER"] = 201, ["N4"] = 108,["N5"] = 60, ["N6"] = 107, ["N+"] = 96,
-    ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
+ ["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169,
+ ["F9"] = 56, ["F10"] = 57, ["~"] = 243, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177, ["TAB"] = 37, ["Q"] = 44,
+ ["W"] = 32, ["E"] = 38, ["R"] = 45, ["T"] = 245, ["Y"] = 246, ["U"] = 303, ["P"] = 199, ["["] = 39, ["]"] = 40,
+ ["ENTER"] = 18, ["CAPS"] = 137, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["F"] = 23, ["G"] = 47, ["H"] = 74, ["K"] = 311,
+ ["L"] = 182, ["LEFTSHIFT"] = 21, ["Z"] = 20, ["X"] = 73, ["C"] = 26, ["V"] = 0, ["B"] = 29, ["N"] = 249, 
+ ["M"] = 244, [","] = 82, ["."] = 81, ["LEFTCTRL"] = 36, ["LEFTALT"] = 19,["SPACE"] = 22, ["RIGHTCTRL"] = 70, 
+ ["HOME"] = 213, ["PAGEUP"] = 10, ["PAGEDOWN"] = 11, ["DELETE"] = 178, ["LEFT"] = 174, ["RIGHT"] = 175,
+ ["TOP"] = 27, ["DOWN"] = 173, ["NENTER"] = 201, ["N4"] = 108,["N5"] = 60, ["N6"] = 107, ["N+"] = 96,
+ ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 
 ESX = nil
-
 local labels = {}
 local craftingQueue = {}
-
 local job = ""
 local grade = 0
 
-Citizen.CreateThread(
-    function()
-        ESX = exports["es_extended"]:getSharedObject()
+CreateThread(
+ function()
+     ESX = exports["es_extended"]:getSharedObject()
 
         while ESX.GetPlayerData().job == nil do
-            Citizen.Wait(10)
+            Wait(10)
         end
 
         job = ESX.GetPlayerData().job.name
@@ -38,13 +36,12 @@ Citizen.CreateThread(
 
         for _, v in ipairs(Config.Workbenches) do
             if v.blip then
-                local blip = AddBlipForCoord(v.coords)
+             local blip = AddBlipForCoord(v.coords)
 
-                SetBlipScale(blip, 0.8)
-                SetBlipAsShortRange(blip, true)
-
-                BeginTextCommandSetBlipName("STRING")
-                EndTextCommandSetBlipName(blip)
+             SetBlipScale(blip, 0.8)
+             SetBlipAsShortRange(blip, true)
+             BeginTextCommandSetBlipName("STRING")
+             EndTextCommandSetBlipName(blip)
             end
         end
     end
@@ -60,9 +57,9 @@ AddEventHandler(
 )
 
 function isNearWorkbench()
-    local ped = PlayerPedId()
-    local coords = GetEntityCoords(ped)
-    local near = false
+ local ped = PlayerPedId()
+ local coords = GetEntityCoords(ped)
+ local near = false
 
     for _, v in ipairs(Config.Workbenches) do
         local dst = #(coords - v.coords)
@@ -78,27 +75,26 @@ function isNearWorkbench()
     end
 end
 
-Citizen.CreateThread(
+CreateThread(
     function()
         while true do
-            Citizen.Wait(1000)
-
+         Wait(1000)
             if craftingQueue[1] ~= nil then
                 if not Config.CraftingStopWithDistance or (Config.CraftingStopWithDistance and isNearWorkbench()) then
-                    craftingQueue[1].time = craftingQueue[1].time - 1
+                 craftingQueue[1].time = craftingQueue[1].time - 1
 
                     SendNUIMessage(
                         {
-                            type = "addqueue",
-                            item = craftingQueue[1].item,
-                            time = craftingQueue[1].time,
-                            id = craftingQueue[1].id
+                         type = "addqueue",
+                         item = craftingQueue[1].item,
+                         time = craftingQueue[1].time,
+                         id = craftingQueue[1].id
                         }
                     )
 
                     if craftingQueue[1].time == 0 then
-                        TriggerServerEvent("bpt_crafting:itemCrafted", craftingQueue[1].item, craftingQueue[1].count)
-                        table.remove(craftingQueue, 1)
+                     TriggerServerEvent("bpt_crafting:itemCrafted", craftingQueue[1].item, craftingQueue[1].count)
+                     table.remove(craftingQueue, 1)
                     end
                 end
             end
@@ -130,32 +126,31 @@ function openWorkbench(val)
 
             SendNUIMessage(
                 {
-                    type = "open",
-                    recipes = recipes,
-                    names = labels,
-                    level = xp,
-                    inventory = inv,
-                    job = job,
-                    grade = grade,
-                    hidecraft = Config.HideWhenCantCraft,
-                    categories = Config.Categories
+                 type = "open",
+                 recipes = recipes,
+                 names = labels,
+                 level = xp,
+                 inventory = inv,
+                 job = job,
+                 grade = grade,
+                 hidecraft = Config.HideWhenCantCraft,
+                 categories = Config.Categories
                 }
             )
         end
     )
 end
 
-Citizen.CreateThread(
+CreateThread(
     function()
         while true do
-            Citizen.Wait(1)
-
-            local ped = PlayerPedId()
-            local coords = GetEntityCoords(ped)
+         Wait(1)
+         local ped = PlayerPedId()
+         local coords = GetEntityCoords(ped)
 
             for _, v in ipairs(Config.Workbenches) do
                 local dst = #(coords - v.coords)
-                if dst < 20 then
+                if dst < 10 then
                     DrawText3D(v.coords[1], v.coords[2], v.coords[3] - 0.8, Config.Text["workbench_hologram"])
                 end
                 if dst < 2 then
@@ -163,7 +158,7 @@ Citizen.CreateThread(
                         local open = false
                         for _, g in ipairs(v.jobs) do
                             if g == job then
-                                open = true
+                             open = true
                             end
                         end
 
@@ -183,8 +178,8 @@ RegisterNetEvent("bpt_crafting:craftStart")
 AddEventHandler(
     "bpt_crafting:craftStart",
     function(item, count)
-        local id = math.random(000, 999)
-        table.insert(craftingQueue, {time = Config.Recipes[item].Time, item = item, count = 1, id = id})
+     local id = math.random(000, 999)
+     table.insert(craftingQueue, {time = Config.Recipes[item].Time, item = item, count = 1, id = id})
 
         SendNUIMessage(
             {
@@ -215,29 +210,28 @@ AddEventHandler(
 RegisterNUICallback(
     "close",
     function(data)
-        TriggerScreenblurFadeOut(1000)
-        SetNuiFocus(false, false)
+     TriggerScreenblurFadeOut(1000)
+     SetNuiFocus(false, false)
     end
 )
 
 RegisterNUICallback(
-    "craft",
+ "craft",
     function(data)
-        local item = data["item"]
-        TriggerServerEvent("bpt_crafting:craft", item, false)
+     local item = data["item"]
+     TriggerServerEvent("bpt_crafting:craft", item, false)
     end
 )
 
 function SendTextMessage(msg)
-    exports['mythic_notify']:SendAlert('inform', msg)
+ exports['mythic_notify']:SendAlert('inform', msg)
 end
 
 function DrawText3D(x, y, z, text)
-    local onScreen, _x, _y = World3dToScreen2d(x, y, z)
-    local px, py, pz = table.unpack(GetGameplayCamCoord())
-    local dist = GetDistanceBetweenCoords(px, py, pz, x, y, z, 1)
-
-    local scale = ((1 / dist) * 2) * (1 / GetGameplayCamFov()) * 100
+ local onScreen, _x, _y = World3dToScreen2d(x, y, z)
+ local px, py, pz = table.unpack(GetGameplayCamCoord())
+ local dist = GetDistanceBetweenCoords(px, py, pz, x, y, z, 1)
+ local scale = ((1 / dist) * 2) * (1 / GetGameplayCamFov()) * 100
 
     if onScreen then
         SetTextColour(255, 255, 255, 255)
@@ -245,14 +239,11 @@ function DrawText3D(x, y, z, text)
         SetTextFont(4)
         SetTextProportional(1)
         SetTextCentre(true)
-
         SetTextDropshadow(1, 1, 1, 1, 255)
-
         BeginTextCommandWidth("STRING")
         AddTextComponentString(text)
-        local height = GetTextScaleHeight(0.55 * scale, 4)
-        local width = EndTextCommandGetWidth(4)
-
+        GetTextScaleHeight(0.55 * scale, 4)
+        EndTextCommandGetWidth(4)
         SetTextEntry("STRING")
         AddTextComponentString(text)
         EndTextCommandDisplayText(_x, _y)

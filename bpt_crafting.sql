@@ -36,5 +36,11 @@ INSERT INTO `bpt_items` (`name`, `label`) VALUES
 	('cigarette_paper', 'cartina'),
 	('cigarrette_opium', 'sigaretta con oppio'),
 	('opium', 'oppio'),
-	('copper', 'Rame')
+	('copper', 'Rame'),
+	('gold', 'oro'),
+	('gunpowder', 'polvere da sparo'),
+	('ammo-sniper', '7.62 NATO'),
+	('grain', 'grano'),
+	('flour', 'farina'),
+	('bread', 'panino vuoto')
 ;
