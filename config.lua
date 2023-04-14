@@ -52,7 +52,6 @@ PermanentItems = { -- Items that dont get removed when crafting
 },
 
 Recipes = { -- Enter Item name and then the speed value! The higher the value the more torque
-
 ['bandage'] = {
  Level = 0, -- From what level this item will be craftable
  Category = 'medical', -- The category item will be put in
@@ -218,8 +217,8 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
  JobGrades = {}, 
  Amount = 3, 
  SuccessRate = 100, 
-	requireBlueprint = false, 
-	Time = 10, 
+ requireBlueprint = false, 
+ Time = 10, 
 	Ingredients = { 
 	 ['hammer'] = 1,
 	 ['ironsheet'] = 10
@@ -303,7 +302,7 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
  requireBlueprint = false, 
  Time = 200, 
 	Ingredients = { 
-		['flour'] = 1
+	 ['flour'] = 1
 	}
 },
 
@@ -318,7 +317,7 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
  requireBlueprint = false, 
  Time = 120, 
 	Ingredients = { 
-		['grain'] = 10
+	 ['grain'] = 10
 	}
 },
 
