@@ -1,21 +1,19 @@
-name: Lint
+name: CI
 on: [push, pull_request]
 jobs:
   lint:
-    name: Lint Resource
+    name: Lint Lua Scripts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Lint
-        uses: iLLeniumStudios/fivem-lua-lint-action@v2
+        uses: GoatG33k/fivem-lua-lint-action@v1
         with:
           capture: "junit.xml"
           args: "-t --formatter JUnit"
-          extra_libs: mysql
-      - name: Generate Lint Report
-        if: always()
-        uses: mikepenz/action-junit-report@v3
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v2
         with:
           report_paths: "**/junit.xml"
-          check_name: Linting Report
-          fail_on_failure: false
+          fail_on_failure: 0
