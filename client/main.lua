@@ -27,8 +27,7 @@ CreateThread(
         job = ESX.GetPlayerData().job.name
         grade = ESX.GetPlayerData().job.grade
 
-        ESX.TriggerServerCallback(
-            "bpt_crafting:getItemNames",
+        ESX.TriggerServerCallback("bpt_crafting:getItemNames",
             function(info)
                 labels = info
             end
@@ -175,8 +174,7 @@ CreateThread(
 )
 
 RegisterNetEvent("bpt_crafting:craftStart")
-AddEventHandler(
-    "bpt_crafting:craftStart",
+AddEventHandler("bpt_crafting:craftStart",
     function(item, count)
      local id = math.random(000, 999)
      table.insert(craftingQueue, {time = Config.Recipes[item].Time, item = item, count = 1, id = id})
