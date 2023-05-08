@@ -83,62 +83,62 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 }, 
 
 ['bandage'] = {
- Level = 0, 
- Category = 'medical', 
- isGun = false, 
- Jobs = {'ambulance'}, 
- JobGrades = {}, 
- Amount = 1, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 20, 
-	Ingredients = { 
-	 ['cottonforbandages'] = 2 
+ Level = 0,
+ Category = 'medical',
+ isGun = false,
+ Jobs = {'ambulance'},
+ JobGrades = {},
+ Amount = 1,
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 20,
+	Ingredients = {
+	 ['cottonforbandages'] = 2
 	}
 }, 
 
 ['ironsheet'] = {
- Level = 0, 
- Category = 'dustman', 
- isGun = false, 
- Jobs = {'dustman'}, 
- JobGrades = {}, 
- Amount = 2, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 60, 
-	Ingredients = { 
-	 ['trash_can'] = 5, 
+ Level = 0,
+ Category = 'dustman',
+ isGun = false,
+ Jobs = {'dustman'},
+ JobGrades = {},
+ Amount = 2,
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 60,
+	Ingredients = {
+	 ['trash_can'] = 5,
 	 ['hammer'] = 1
 	}
 },
 
 ['recycled_paper'] = {
- Level = 0, 
- Category = 'dustman', 
- isGun = false, 
- Jobs = {'dustman'}, 
- JobGrades = {}, 
- Amount = 1, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 30, 
-	Ingredients = { 
+ Level = 0,
+ Category = 'dustman',
+ isGun = false,
+ Jobs = {'dustman'},
+ JobGrades = {},
+ Amount = 1,
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 30,
+	Ingredients = {
 	 ['paper'] = 2
 	}
 },
 
 ['paper'] = {
- Level = 0, 
- Category = 'dustman', 
- isGun = false, 
- Jobs = {'dustman'}, 
- JobGrades = {}, 
- Amount = 6, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 30, 
-	Ingredients = { 
+ Level = 0,
+ Category = 'dustman',
+ isGun = false,
+ Jobs = {'dustman'},
+ JobGrades = {},
+ Amount = 6,
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 30,
+	Ingredients = {
 	 ['newspaper'] = 1,
 	 ['trash_burgershot'] = 1
 	}
@@ -146,29 +146,29 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 
 ['hammer'] = {
  Level = 0,
- Category = 'import', 
- isGun = false, 
- Jobs = {'import'}, 
- JobGrades = {}, 
- Amount = 4, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 60, 
-	Ingredients = { 
-	 ['iron'] = 4, 
+ Category = 'import',
+ isGun = false,
+ Jobs = {'import'},
+ JobGrades = {},
+ Amount = 4,
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 60,
+	Ingredients = {
+	 ['iron'] = 4,
 	 ['legnatagliata'] = 1
 	}
 }, 
 
 ['fixkit'] = {
  Level = 0,
- Category = 'mechanic', 
- isGun = false, 
- Jobs = {'mechanic'}, 
- JobGrades = {}, 
- Amount = 1, 
- SuccessRate = 100, 
- requireBlueprint = false, 
+ Category = 'mechanic',
+ isGun = false,
+ Jobs = {'mechanic'},
+ JobGrades = {},
+ Amount = 1,
+ SuccessRate = 100,
+ requireBlueprint = false,
  Time = 60, 
 	Ingredients = { 
 	 ['ironsheet'] = 2, 
@@ -178,12 +178,12 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 
 ['almondmilk'] = {
  Level = 0,
- Category = 'unicorn', 
- isGun = false, 
- Jobs = {'unicorn'}, 
- JobGrades = {}, 
+ Category = 'unicorn',
+ isGun = false,
+ Jobs = {'unicorn'},
+ JobGrades = {},
  Amount = 1, 
- SuccessRate = 100, 
+ SuccessRate = 100,
  requireBlueprint = false, 
  Time = 60, 
 	Ingredients = { 
@@ -195,7 +195,7 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 
 ['slicedchips'] = {
  Level = 0,
- Category = 'unicorn', 
+ Category = 'unicorn',
  isGun = false, 
  Jobs = {'unicorn'}, 
  JobGrades = {}, 
@@ -211,7 +211,7 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 
 ['iron'] = {
  Level = 0,
- Category = 'import', 
+ Category = 'import',
  isGun = false, 
  Jobs = {'import'}, 
  JobGrades = {}, 
@@ -227,15 +227,15 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 
 ['cigarette_paper'] = {
  Level = 0,
- Category = 'ballas', 
- isGun = false, 
+ Category = 'ballas',
+ isGun = false,
  Jobs = {'ballas'}, 
- JobGrades = {}, 
- Amount = 1, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 10, 
-	Ingredients = { 
+ JobGrades = {},
+ Amount = 1,
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 10,
+	Ingredients = {
 	 ['recycled_paper'] = 1
 	}
 },
@@ -293,45 +293,45 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 
 ['bread'] = {
  Level = 0,
- Category = 'baker', 
- isGun = false, 
- Jobs = {'baker'}, 
- JobGrades = {}, 
+ Category = 'baker',
+ isGun = false,
+ Jobs = {'baker'},
+ JobGrades = {},
  Amount = 5, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 200, 
-	Ingredients = { 
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 200,
+	Ingredients = {
 	 ['flour'] = 1
 	}
 },
 
 ['flour'] = {
  Level = 0,
- Category = 'baker', 
- isGun = false, 
- Jobs = {'baker'}, 
- JobGrades = {}, 
- Amount = 1, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 120, 
-	Ingredients = { 
+ Category = 'baker',
+ isGun = false,
+ Jobs = {'baker'},
+ JobGrades = {},
+ Amount = 1,
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 120,
+	Ingredients = {
 	 ['grain'] = 10
 	}
 },
 
 ['bread_deer'] = {
  Level = 0,
- Category = 'unicorn', 
- isGun = false, 
- Jobs = {'unicorn'}, 
- JobGrades = {}, 
- Amount = 3, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 120, 
-	Ingredients = { 
+ Category = 'unicorn',
+ isGun = false,
+ Jobs = {'unicorn'},
+ JobGrades = {},
+ Amount = 3,
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 120,
+	Ingredients = {
 	 ['deer_meat'] = 1,
 	 ['bread'] = 3
 	}
@@ -357,7 +357,3 @@ Text = {
  ['inv_limit_exceed'] = 'Limite inventario superato! Rimuovi qualcosa prima di perdere altra merce',
  ['crafting_failed'] = 'Non sei riuscito a creare l\'oggetto!'
 }}
-
-
-
-
