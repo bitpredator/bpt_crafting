@@ -65,7 +65,7 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	Ingredients = {
 		['cottonforbandages'] = 2
 	}
-}, 
+},
 
 ['cottonforbandages'] = {
  Level = 0, -- From what level this item will be craftable
@@ -154,9 +154,9 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
  Amount = 1,
  SuccessRate = 100,
  requireBlueprint = false,
- Time = 60, 
-	Ingredients = { 
-	 ['ironsheet'] = 2, 
+ Time = 60,
+	Ingredients = {
+	 ['ironsheet'] = 2,
 	 ['hammer'] = 1
 	}
 },
@@ -167,12 +167,12 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
  isGun = false,
  Jobs = {'unicorn'},
  JobGrades = {},
- Amount = 1, 
+ Amount = 1,
  SuccessRate = 100,
- requireBlueprint = false, 
- Time = 60, 
-	Ingredients = { 
-	 ['ice'] = 2, 
+ requireBlueprint = false,
+ Time = 60,
+	Ingredients = {
+	 ['ice'] = 2,
 	 ['almonds'] = 5,
 	 ['water'] = 1
 	}
@@ -181,14 +181,14 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 ['slicedchips'] = {
  Level = 0,
  Category = 'unicorn',
- isGun = false, 
- Jobs = {'unicorn'}, 
- JobGrades = {}, 
- Amount = 5, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 10, 
-	Ingredients = { 
+ isGun = false,
+ Jobs = {'unicorn'},
+ JobGrades = {},
+ Amount = 5,
+ SuccessRate = 100,
+ requireBlueprint = false,
+ Time = 10,
+	Ingredients = {
 	 ['potato'] = 1,
 	 ['water'] = 1
 	}
@@ -257,22 +257,6 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	 ['iron'] = 1,
 	 ['gunpowder'] = 1,
 	 ['gold'] = 1
-	}
-},
-
-['iron'] = {
- Level = 0,
- Category = 'import', 
- isGun = false, 
- Jobs = {'import'}, 
- JobGrades = {}, 
- Amount = 3, 
- SuccessRate = 100, 
- requireBlueprint = false, 
- Time = 10, 
-	Ingredients = { 
-	 ['hammer'] = 1,
-	 ['ironsheet'] = 10
 	}
 },
 
