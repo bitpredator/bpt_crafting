@@ -166,7 +166,7 @@ ESX.RegisterServerCallback(
 
 ESX.RegisterServerCallback(
     "bpt_crafting:getItemNames",
-    function(source, cb)
+    function(_, cb)
         local names = {}
 
         MySQL.Async.fetchAll(
