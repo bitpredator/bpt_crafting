@@ -1,4 +1,3 @@
-ESX = nil
 ESX = exports["es_extended"]:getSharedObject()
 function setCraftingLevel(identifier, level)
     MySQL.Async.execute(
@@ -28,16 +27,14 @@ function giveCraftingLevel(identifier, level)
 end
 
 RegisterServerEvent("bpt_crafting:setExperiance")
-AddEventHandler(
-    "bpt_crafting:setExperiance",
+AddEventHandler("bpt_crafting:setExperiance",
     function(identifier, xp)
         setCraftingLevel(identifier, xp)
     end
 )
 
 RegisterServerEvent("bpt_crafting:giveExperiance")
-AddEventHandler(
-    "bpt_crafting:giveExperiance",
+AddEventHandler("bpt_crafting:giveExperiance",
     function(identifier, xp)
         giveCraftingLevel(identifier, xp)
     end
@@ -67,7 +64,7 @@ function craft(src, item, retrying)
 
             TriggerClientEvent("bpt_crafting:craftStart", src, item, count)
         else
-            TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["not_enough_ingredients"])
+            TriggerClientEvent("bpt_crafting:sendMessage", src, _U('not_enough_ingredients'))
         end
     else
         if Config.UseLimitSystem then
@@ -81,10 +78,10 @@ function craft(src, item, retrying)
 
                     TriggerClientEvent("bpt_crafting:craftStart", src, item, count)
                 else
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["not_enough_ingredients"])
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U("not_enough_ingredients"))
                 end
             else
-                TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["you_cant_hold_item"])
+                TriggerClientEvent("bpt_crafting:sendMessage", src, _U('you_cant_hold_item'))
             end
         else
             if xPlayer.canCarryItem(item, count) then
@@ -95,18 +92,17 @@ function craft(src, item, retrying)
 
                     TriggerClientEvent("bpt_crafting:craftStart", src, item, count)
                 else
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["not_enough_ingredients"])
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('not_enough_ingredients'))
                 end
             else
-                TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["you_cant_hold_item"])
+                TriggerClientEvent("bpt_crafting:sendMessage", src, _U('you_cant_hold_item'))
             end
         end
     end
 end
 
 RegisterServerEvent("bpt_crafting:itemCrafted")
-AddEventHandler(
-    "bpt_crafting:itemCrafted",
+AddEventHandler("bpt_crafting:itemCrafted",
     function(item, count)
         local src = source
         local xPlayer = ESX.GetPlayerFromId(src)
@@ -121,11 +117,11 @@ AddEventHandler(
                     else
                         xPlayer.addInventoryItem(item, count)
                     end
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["item_crafted"])
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('item_crafted'))
                     giveCraftingLevel(xPlayer.identifier, Config.ExperiancePerCraft)
                 else
                     TriggerEvent("bpt_crafting:craft", item)
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["inv_limit_exceed"])
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('inv_limit_exceed'))
                 end
             else
                 if xPlayer.canCarryItem(item, count) then
@@ -134,29 +130,27 @@ AddEventHandler(
                     else
                         xPlayer.addInventoryItem(item, count)
                     end
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["item_crafted"])
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('item_crafted'))
                     giveCraftingLevel(xPlayer.identifier, Config.ExperiancePerCraft)
                 else
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["inv_limit_exceed"])
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('inv_limit_exceed'))
                 end
             end
         else
-            TriggerClientEvent("bpt_crafting:sendMessage", src, Config.Text["crafting_failed"])
+            TriggerClientEvent("bpt_crafting:sendMessage", src, _U('crafting_failed'))
         end
     end
 )
 
 RegisterServerEvent("bpt_crafting:craft")
-AddEventHandler(
-    "bpt_crafting:craft",
+AddEventHandler("bpt_crafting:craft",
     function(item, retrying)
         local src = source
         craft(src, item, retrying)
     end
 )
 
-ESX.RegisterServerCallback(
-    "bpt_crafting:getXP",
+ESX.RegisterServerCallback("bpt_crafting:getXP",
     function(source, cb)
         local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -164,8 +158,7 @@ ESX.RegisterServerCallback(
     end
 )
 
-ESX.RegisterServerCallback(
-    "bpt_crafting:getItemNames",
+ESX.RegisterServerCallback("bpt_crafting:getItemNames",
     function(_, cb)
         local names = {}
 

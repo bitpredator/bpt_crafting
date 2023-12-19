@@ -44,7 +44,12 @@ Categories = {
 	 Label = 'Baker',
 	 Image = 'baker',
 	 Jobs = {'baker'}
-	}
+	},
+	['fisherman'] = {
+		Label = 'fisherman',
+		Image = 'fisherman',
+		Jobs = {'fisherman'}
+	},
 },
 
 PermanentItems = { -- Items that dont get removed when crafting
@@ -304,25 +309,34 @@ Recipes = { -- Enter Item name and then the speed value! The higher the value th
 	 ['deer_meat'] = 1,
 	 ['bread'] = 3
 	}
-},},
+},
+
+['salmon_fillet'] = {
+	Level = 0,
+	Category = 'fisherman',
+	isGun = false,
+	Jobs = {'fisherman'},
+	JobGrades = {},
+	Amount = 2,
+	SuccessRate = 100,
+	requireBlueprint = false,
+	Time = 60,
+	   Ingredients = {
+		['salmon'] = 1
+	   }
+    },
+},
 
 Workbenches = { -- Every workbench location, leave {} for jobs if you want everybody to access
- {coords = vector3(1020.936279, -2404.628662, 30.122314), jobs = {'import'}, blip = false, recipes = {'cottonforbandages','iron','hammer'}, radius = 1.0 },
- {coords = vector3(311.314301, -565.213196, 43.282104), jobs = {'ambulance'}, blip = false, recipes = {'bandage'}, radius = 1.0 },
- {coords = vector3(-323.551636, -129.626373, 39.002197), jobs = {'mechanic'}, blip = false, recipes = {'fixkit'}, radius = 1.0 },
- {coords = vector3(809.090088, -2172.923096, 29.616821), jobs = {'ammu'}, blip = false, recipes = {'WEAPON_APPISTOL','ammo-sniper'}, radius = 1.0 },
- {coords = vector3(129.217590, -1283.802246, 29.263062), jobs = {'unicorn'}, blip = false, recipes = {'almondmilk','slicedchips','bread_deer'}, radius = 1.0 },
- {coords = vector3(-416.993408, -1683.468140, 19.018311), jobs = {'dustman'}, blip = false, recipes = {'ironsheet','recycled_paper','paper'}, radius = 1.0 },
- {coords = vector3(83.156044, -1960.259277, 18.041016), jobs = {'ballas'}, blip = false, recipes = {'cigarette_paper'}, radius = 1.0 },
- {coords = vector3(2342.202148, 3144.817627, 48.202148), jobs = {'baker'}, blip = false, recipes = {'flour', 'bread'}, radius = 1.0 },
-},
- 
-Text = {
- ['not_enough_ingredients'] = 'Non hai abbastanza ingredienti',
- ['you_cant_hold_item'] = 'Non puoi creare il prodotto',
- ['item_crafted'] = 'Articolo realizzato!',
- ['wrong_job'] = 'Non puoi aprire questo banco di lavoro',
- ['workbench_hologram'] = '[~b~E~w~] banco da lavoro',
- ['inv_limit_exceed'] = 'Limite inventario superato! Rimuovi qualcosa prima di perdere altra merce',
- ['crafting_failed'] = 'Non sei riuscito a creare l\'oggetto!'
+ {coords = vector3(1020.936279, -2404.628662, 30.122314), jobs = {'import'}, blip = false, recipes = {'cottonforbandages','iron','hammer'}, radius = 1.0},
+ {coords = vector3(311.314301, -565.213196, 43.282104), jobs = {'ambulance'}, blip = false, recipes = {'bandage'}, radius = 1.0},
+ {coords = vector3(-323.551636, -129.626373, 39.002197), jobs = {'mechanic'}, blip = false, recipes = {'fixkit'}, radius = 1.0},
+ {coords = vector3(809.090088, -2172.923096, 29.616821), jobs = {'ammu'}, blip = false, recipes = {'WEAPON_APPISTOL','ammo-sniper'}, radius = 1.0},
+ {coords = vector3(129.217590, -1283.802246, 29.263062), jobs = {'unicorn'}, blip = false, recipes = {'almondmilk','slicedchips','bread_deer'}, radius = 1.0},
+ {coords = vector3(-416.993408, -1683.468140, 19.018311), jobs = {'dustman'}, blip = false, recipes = {'ironsheet','recycled_paper','paper'}, radius = 1.0},
+ {coords = vector3(83.156044, -1960.259277, 18.041016), jobs = {'ballas'}, blip = false, recipes = {'cigarette_paper'}, radius = 1.0},
+ {coords = vector3(2342.202148, 3144.817627, 48.202148), jobs = {'baker'}, blip = false, recipes = {'flour', 'bread'}, radius = 1.0},
+ {coords = vector3(-316.549438, -2781.217529, 4.982422), jobs = {'fisherman'}, blip = false, recipes = {'salmon_fillet'}, radius = 1.0},
 }}
+
+Config.Locale = 'en'
