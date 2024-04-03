@@ -64,7 +64,7 @@ function craft(src, item, retrying)
 
             TriggerClientEvent("bpt_crafting:craftStart", src, item, count)
         else
-            TriggerClientEvent("bpt_crafting:sendMessage", src, _U('not_enough_ingredients'))
+            TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap('not_enough_ingredients'))
         end
     else
         if Config.UseLimitSystem then
@@ -78,10 +78,10 @@ function craft(src, item, retrying)
 
                     TriggerClientEvent("bpt_crafting:craftStart", src, item, count)
                 else
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U("not_enough_ingredients"))
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap("not_enough_ingredients"))
                 end
             else
-                TriggerClientEvent("bpt_crafting:sendMessage", src, _U('you_cant_hold_item'))
+                TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap('you_cant_hold_item'))
             end
         else
             if xPlayer.canCarryItem(item, count) then
@@ -92,10 +92,10 @@ function craft(src, item, retrying)
 
                     TriggerClientEvent("bpt_crafting:craftStart", src, item, count)
                 else
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('not_enough_ingredients'))
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap('not_enough_ingredients'))
                 end
             else
-                TriggerClientEvent("bpt_crafting:sendMessage", src, _U('you_cant_hold_item'))
+                TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap('you_cant_hold_item'))
             end
         end
     end
@@ -117,11 +117,11 @@ AddEventHandler("bpt_crafting:itemCrafted",
                     else
                         xPlayer.addInventoryItem(item, count)
                     end
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('item_crafted'))
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap('item_crafted'))
                     giveCraftingLevel(xPlayer.identifier, Config.ExperiancePerCraft)
                 else
                     TriggerEvent("bpt_crafting:craft", item)
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('inv_limit_exceed'))
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap('inv_limit_exceed'))
                 end
             else
                 if xPlayer.canCarryItem(item, count) then
@@ -130,14 +130,14 @@ AddEventHandler("bpt_crafting:itemCrafted",
                     else
                         xPlayer.addInventoryItem(item, count)
                     end
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('item_crafted'))
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap('item_crafted'))
                     giveCraftingLevel(xPlayer.identifier, Config.ExperiancePerCraft)
                 else
-                    TriggerClientEvent("bpt_crafting:sendMessage", src, _U('inv_limit_exceed'))
+                    TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap('inv_limit_exceed'))
                 end
             end
         else
-            TriggerClientEvent("bpt_crafting:sendMessage", src, _U('crafting_failed'))
+            TriggerClientEvent("bpt_crafting:sendMessage", src, TranslateCap('crafting_failed'))
         end
     end
 )
