@@ -147,7 +147,7 @@ CreateThread(
             for _, v in ipairs(Config.Workbenches) do
                 local dst = #(coords - v.coords)
                 if dst < 10 then
-                    DrawText3D(v.coords[1], v.coords[2], v.coords[3] - 0.8, _U('workbench_hologram'))
+                    DrawText3D(v.coords[1], v.coords[2], v.coords[3] - 0.8, TranslateCap('workbench_hologram'))
                 end
                 if dst < 2 then
                     if IsControlJustReleased(0, Keys["E"]) then
@@ -161,7 +161,7 @@ CreateThread(
                         if open or #v.jobs == 0 then
                             openWorkbench(v)
                         else
-                            SendTextMessage(_U('wrong_job'))
+                            SendTextMessage(TranslateCap('wrong_job'))
                         end
                     end
                 end
