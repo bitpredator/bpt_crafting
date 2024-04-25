@@ -102,7 +102,7 @@ function openCategory() {
   }
 
   base = base + first
-    '   <div class="verticalspacer" data-offset-top="0" data-content-above-spacer="1060" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>' +
+  '   <div class="verticalspacer" data-offset-top="0" data-content-above-spacer="1060" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>' +
     '   <div class="grpelem" id="u559"><!-- simple frame --></div>' +
     '  </div>';
   $("#main").append(base);
@@ -265,7 +265,7 @@ function openCrafting(t) {
   }
 
   base = base + first + second
-    '   <div class="verticalspacer" data-offset-top="0" data-content-above-spacer="1060" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>' +
+  '   <div class="verticalspacer" data-offset-top="0" data-content-above-spacer="1060" data-content-below-spacer="0" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>' +
     '   <div class="grpelem" id="u559"></div>' +
     '   </div>';
   $("#main").append(base);
@@ -408,7 +408,7 @@ function inspect(t) {
     }
 
 
-    base = base + first + second 
+    base = base + first + second
     $("#page").append(base);
   }
 
