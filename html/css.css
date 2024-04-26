@@ -13,7 +13,7 @@
 	font-weight: bold;
 }
 
-#u136 { 
+#u136 {
 	/* color xp bar*/
 	background-color: #ff2f2fbd;
 	opacity: 0.76;
@@ -224,6 +224,7 @@
 		-webkit-transform: translateX(100px);
 		transform: translateX(100px);
 	}
+
 	100% {
 		-webkit-transform: translateX(0);
 		transform: translateX(0);
@@ -897,26 +898,26 @@ html {
 
 /* width */
 
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
 	width: 0px;
 }
 
 /* Track */
 
- ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
 	opacity: 0.0;
 }
 
 /* Handle */
 
- ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
 	background: #2469ff;
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 
- ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
 	background: #2469ff;
 	border-radius: 10px;
 }
@@ -962,6 +963,7 @@ html {
 		-webkit-transform: scale(0.5);
 		transform: scale(0.5);
 	}
+
 	100% {
 		-webkit-transform: scale(1);
 		transform: scale(1);
@@ -973,6 +975,7 @@ html {
 		-webkit-transform: scale(0.5);
 		transform: scale(0.5);
 	}
+
 	100% {
 		-webkit-transform: scale(1);
 		transform: scale(1);
@@ -1093,6 +1096,7 @@ html {
 		-webkit-transform: translateY(0);
 		transform: translateY(0);
 	}
+
 	100% {
 		-webkit-transform: translateY(100px);
 		transform: translateY(100px);
@@ -1104,6 +1108,7 @@ html {
 		-webkit-transform: translateY(0);
 		transform: translateY(0);
 	}
+
 	100% {
 		-webkit-transform: translateY(100px);
 		transform: translateY(100px);
@@ -1613,6 +1618,7 @@ button:hover {
 	margin-left: 50%;
 	left: 36px;
 }
+
 #u523-4 {
 	z-index: 112;
 	width: 48px;
